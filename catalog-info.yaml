@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: python-offnqfzt-gitops
+  description: This is GitOps manifest for python-offnqfzt   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=python-offnqfzt
+    backstage.io/kubernetes-id: python-offnqfzt 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: python-offnqfzt-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:python-offnqfzt
